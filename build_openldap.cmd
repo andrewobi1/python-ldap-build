@@ -2,16 +2,13 @@
 @echo on
 setlocal
 
-:: set OPENLDAP_VER=openldap-2.4.59
+:: set OPENLDAP_VER=openldap-2.5.19
 :: set VS_PLATFORM=x64
 
 curl -L -o %OPENLDAP_VER%.tgz https://www.openldap.org/software/download/OpenLDAP/openldap-release/%OPENLDAP_VER%.tgz
 if errorlevel 1 exit /B 1
 
 tar -xf %OPENLDAP_VER%.tgz
-if errorlevel 1 exit /B 1
-
-git apply -p1 --verbose --directory=%OPENLDAP_VER% openldap.diff
 if errorlevel 1 exit /B 1
 
 cd %OPENLDAP_VER%
