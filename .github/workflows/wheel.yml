@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
 
 env:
-  OPENSSL_VER: openssl-1.1.1w
-  OPENLDAP_VER: openldap-2.4.59
+  OPENSSL_VER: openssl-3.4.0
+  OPENLDAP_VER: openldap-2.5.19
   PYTHONLDAP_VER: python-ldap-3.4.4
   CIBW_TEST_COMMAND: python -c"import ldap;print(ldap.__version__)"
-  CIBW_SKIP: "pp* cp36*"
+  CIBW_SKIP: "pp* cp36* cp37*"
   MSBUILDTREATHIGHERTOOLSVERSIONASCURRENT: 1
 
 jobs:
