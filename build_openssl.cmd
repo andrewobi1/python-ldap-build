@@ -2,7 +2,7 @@
 @echo on
 setlocal
 
-:: set OPENSSL_VER=openssl-1.1.1w
+:: set OPENSSL_VER=openssl-3.4.0
 :: set OPENSSL_CONFIG=VC-WIN64A-masm
 :: set PATH=%PATH%;X:\Perl\bin
 
@@ -10,9 +10,6 @@ curl -L -o %OPENSSL_VER%.tar.gz https://www.openssl.org/source/%OPENSSL_VER%.tar
 if errorlevel 1 exit /B 1
 
 tar -xf %OPENSSL_VER%.tar.gz
-if errorlevel 1 exit /B 1
-
-git apply -p1 --verbose --directory=%OPENSSL_VER% openssl.diff
 if errorlevel 1 exit /B 1
 
 cd %OPENSSL_VER%
